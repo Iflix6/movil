@@ -1,0 +1,297 @@
+
+:root {
+    --first-color: #FFB568;
+    --button-color: #2B2B2B;
+    --first-color-action-alt: #363636;
+    --title-color: #2E2E2E;
+    --text-color: #595959;
+    --text-color-light: #8C8C8C;
+    --body-color: #FCFCFC;
+    --container-color: #FFFFFF;
+    --border-color: #F0F0F0;
+    --first-color-dark: #EFBE8A;
+    --first-color-action-dark: #3D3D3D;
+    --first-color-action-alt-dark: #474747;
+    --title-color-dark: #474747;
+    --text-color-dark: #F2F2F2;
+    --body-color-dark: #1F1F1F;
+    --container-color-dark: #292929;
+    --border-color-dark: #333333;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --h4-normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --Biggest-font-size: 2.25rem;
+    --h2-font-size-desk: 1.5rem;
+    --h3-font-size-desk: 1.25rem;
+    --h4-normal-font-size-desk: 1rem;
+    --small-font-size-desk: .875rem;
+    --smaller-font-size-desk: .813rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;     
+}
+
+
+body {
+    background-color: var(--body-color);
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    
+}
+
+body.dark-theme {
+    --first-color: #EFBE8A;
+    --button-color: #3D3D3D;
+    --first-color-action-alt: #474747;
+    --title-color: #474747;
+    --text-color: #BFBFBF;
+    --text-color-light: #A0A0A0;
+    --body-color: #1F1F1F;
+    --container-color: #292929;
+    --border-color: #333333;
+}
+
+body.dark-theme .close, .hero-logo-im {
+    filter: invert(1);
+}
+
+body.dark-theme .logo_text {
+    color: var(--text-color-dark);
+}
+
+.open, .close {
+    display: none;
+    color: inherit;
+}
+
+/* Hide the sun icon by default */
+.sun {
+    display: none;
+}
+
+/* When in dark theme, hide the moon icon and show the sun icon */
+body.dark-theme .moon {
+    display: none;
+}
+
+body.dark-theme .sun {
+    display: block;
+}
+
+/* Make sure both icons have the same size and alignment */
+.theme .logo {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hero-text-container, p {
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 760px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .hero_container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 840px;
+    }
+
+    .navigation_bar {
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        display: flex;
+        position: fixed;
+        top: 0; /* Position it at the top */
+        /* left: 0; */
+        width: 100vw;
+        /* padding: 1px; */
+        /* overflow: hidden; */
+        /* position: relative; */
+    }
+
+    .log {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        padding: 15px;
+        /* top: 0; */
+        left: 0;
+        position: sticky;
+        margin-bottom: 184%;
+    }
+    
+    .log:last-child {
+        padding-right: 4px;
+    }
+
+    .nav-collection {
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin: 0; /* Remove default margins */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    position: fixed; /* Ensure it stays in place when scrolling */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align it to the left */
+    background-color: var(--container-color);
+    padding: 100px;
+    display: none;
+    z-index: 999;
+    transition: transform 1s ease-in-out;
+    flex-direction: column;
+    }
+    
+    .nav-collection.active {
+        display: flex;
+    }
+
+    .nav_items {
+        list-style: none;
+        text-align: center;
+    }
+    
+    .nav_item, a {
+        list-style: none;
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: var(--h1-font-size);
+        font-weight: 510;
+        padding: 15px 0;
+    }
+
+    .logo_container {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--first-color);
+        width: 100%;
+        justify-content: end;
+        /* margin-left: 2px; */
+        padding: 15px;
+        align-items: end;
+    }
+    
+    .con_row {
+        display: flex;
+        flex-direction: row;
+        gap: 18px;
+        justify-content: end;
+        /* margin-left: 2px; */
+        padding-right: 70px;
+    }
+
+        .hero_image {
+            width: 240px;
+            height: auto;
+            background-color: var(--first-color);
+            /* justify-content: center; */
+            align-items: center;
+            margin-top: 80px;
+            justify-content: center;
+            padding-right: 40px;
+    }
+
+    .hero-con {
+        height: 430px;
+        width: 258px;
+    }
+
+    .nav_item:first-child > a {
+        color: var(--first-color);
+    }
+
+    .nav_item:hover > a {
+        color: var(--first-color);
+    }
+    
+    .logo {
+        
+        width: 20px;
+        height: 20px;
+    }
+
+    .menu {
+        cursor: pointer;
+    }
+    
+    /* .close {
+        display: flex;
+    } */
+
+    .open {
+        display: flex;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+    }
+
+    .theme:last-child {
+        display: hidden;
+    }
+
+    .hero_contents {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    
+    }
+
+    .hero_contents:last-child {
+        margin-right: 2px;
+        gap: 15px;
+        margin-left: 12px;
+        
+    }
+
+    .hero-text-container {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-text {
+        writing-mode: vertical-rl; /* Rotate text */
+        transform: rotate(180deg); /* Rotate text upright */
+        font-size: var(--smaller-font-size); /* Adjust font size */
+        text-transform: uppercase; /* Make text uppercase if needed */
+        letter-spacing: 1px; /* Adjust letter spacing */
+        text-align: center;
+    }
+    
+
+
+}
